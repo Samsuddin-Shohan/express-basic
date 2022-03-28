@@ -3,6 +3,7 @@ const cors = require('cors');
 const app = express();
 const port = 5000;
 app.use(cors());
+app.use(express.json())
 let users = [
     {'id': 0, 'name':'shohan','dept':'cse'},
     {'id': 1, 'name':'arif','dept':'cse'},
@@ -21,6 +22,14 @@ app.get('/users', (req, res) => {
       res.send(users);
   }
 });
+app.post('/users',(req,res)=>{
+  const newUser = req.body;
+  newUser.dept = req.body.email;
+  newUser.id = users.length ;
+  users.push(newUser);
+  res.json(newUser);
+  
+})
 app.get('/users/:id', (req,res)=>{
     id = req.params.id;
     res.send(users[id]);
