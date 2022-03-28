@@ -9,7 +9,8 @@ let users = [
     {'id': 1, 'name':'arif','dept':'cse'},
     {'id': 2, 'name':'sharif','dept':'cse'},
     {'id': 3, 'name':'niloy','dept':'cse'},
-    {'id': 4, 'name':'walid','dept':'cse'}
+    {'id': 4, 'name':'walid','dept':'cse'},
+    {'id': 5, 'name':'walid','dept':'cse'}
 ];
 
 app.get('/users', (req, res) => {
